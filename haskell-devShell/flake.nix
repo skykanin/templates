@@ -23,7 +23,10 @@
         # Haskell and shell tooling
         tools = [
           pkgs.binutils-unwrapped
-          hpkgs.haskell-language-server
+          # Use HLS from root `pkgs` instead of `hpkgs` so that it's stripped
+          # of library references this way it doesn't provide executables for
+          # hlint, fourmolu, brittany etc.
+          pkgs.haskell-language-server
           hpkgs.ghc
           hpkgs.cabal-install
           hpkgs.ghcid
