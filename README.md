@@ -3,13 +3,13 @@
 My personal Nix templates for getting started with a Nix project.
 
 ```console
-$ nix flake init --template github:skykanin/templates#full
+$ nix flake init --template github:skykanin/templates#haskell-devShell
 ```
 
 or
 
 ```console
-$ nix flake new --template github:skykanin/templates#full ./my-new-project
+$ nix flake new --template github:skykanin/templates#haskell-devShell ./my-new-project
 ```
 
 You can also add a shortcut to the flake url by adding it to your registry with a name.
