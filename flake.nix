@@ -11,6 +11,13 @@
           "A development environment for Haskell with provided tooling";
       };
 
+      scala-devShell = {
+        path = ./scala-devShell;
+        description =
+          "A development environment for Scala with provided tooling";
+      };
+
+
     };
 
   };
