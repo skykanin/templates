@@ -17,21 +17,21 @@
       devShells.default =
         let
           # The compiler version to use for development
-          compiler-version = "ghc924";
+          compiler-version = "ghc925";
           pkgs = nixpkgs.legacyPackages.${system};
           inherit (pkgs) lib;
           hpkgs = pkgs.haskell.packages.${compiler-version};
           # Haskell and shell tooling
-          tools = [
-            pkgs.binutils-unwrapped
-            hpkgs.haskell-language-server
-            hpkgs.ghc
-            hpkgs.cabal-install
-            hpkgs.ghcid
-            hpkgs.fourmolu
+          tools = with hpkgs; [
+            haskell-language-server
+            ghc
+            cabal-install
+            cabal-plan
+            ghcid
+            fourmolu
           ];
           # System libraries that need to be symlinked
-          libraries = [ ];
+          libraries = with pkgs; [ zlib ];
           libraryPath = "${lib.makeLibraryPath libraries}";
         in hpkgs.shellFor {
           name = "dev-shell";
