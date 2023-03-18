@@ -17,6 +17,11 @@
           "A development environment for Scala with provided tooling";
       };
 
+      basic-devShell = {
+        path = ./basic-devShell;
+        description =
+          "A basic development environment template";
+      };
 
     };
 
