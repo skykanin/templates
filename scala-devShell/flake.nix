@@ -26,6 +26,7 @@
             dotty
             sbt
             scalafmt
+            scalafix
           ];
           # System libraries that need to be symlinked
           libraries = [ ];
