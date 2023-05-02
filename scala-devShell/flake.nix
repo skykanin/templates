@@ -11,7 +11,7 @@
 
   outputs = { self, flake-utils, nixpkgs }:
     flake-utils.lib.eachSystem
-    (with flake-utils.lib.system; [ x86_64-linux x86_64-darwin aarch64-darwin ])
+    (with flake-utils.lib.system; [ x86_64-linux aarch64-linux x86_64-darwin aarch64-darwin ])
     (system: {
       # A Scala development environment with provided tooling
       devShells.default =
