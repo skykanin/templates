@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     # Nix package set
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
   outputs = { self, flake-utils, nixpkgs }:
