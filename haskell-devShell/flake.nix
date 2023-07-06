@@ -30,7 +30,7 @@
             cabal-install
             cabal-plan
             (hlib.dontCheck ghcid)
-            fourmolu
+            (hlib.dontCheck fourmolu)
           ];
           # System libraries that need to be symlinked
           libraries = with pkgs; [ zlib ];
@@ -44,5 +44,11 @@
           LD_LIBRARY_PATH = libraryPath;
           LIBRARY_PATH = libraryPath;
         };
-    });
+    }) // {
+    nixConfig = {
+      # Configure cachix cache as chosen GHC version is not cached in nixpkgs
+      extra-substituers = [ "https://haskell-dev-shell.cachix.org" ];
+      extra-trusted-public-keys = [ "haskell-dev-shell.cachix.org-1:drFpU0pMVRoyEj4VXocwIvycjEEY6z5Hh18CrkVz+ZM=" ];
+    };
+  };
 }
